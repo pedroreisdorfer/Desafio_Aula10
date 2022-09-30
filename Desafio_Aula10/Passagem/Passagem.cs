@@ -9,9 +9,11 @@ namespace Desafio_Aula10
         public string Origem { get; set; }
         public string Destino { get; set; }
 
+        public Origem_Destino Origem_Destino;
+
         //public DB_ContextPoltronas DB_ContextPoltronas_;
 
-        private readonly DB_ContextPoltronas DB_ContextPoltronas_;
+        //private readonly DB_ContextPoltronas DB_ContextPoltronas_;
 
         // acesso a poltrona que foi digita no Console, buscando no banco de dados
 

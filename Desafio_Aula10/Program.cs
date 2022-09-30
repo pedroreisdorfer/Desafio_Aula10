@@ -6,10 +6,50 @@ namespace Desafio_Aula10
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Escolha seu Destino");
-            //De: __________
-            //Para:_________
+            Console.Write("Escolha sua Origem: ");
+            string origem = Console.ReadLine(); // validação contra número. Em um programa mais completo, colocar lista de opção de origem
+            Console.Write("Escolha sua Destino: ");
+            string destino = Console.ReadLine();
+            Origem_Destino origem_Destino = new Origem_Destino(origem, destino); // PASSADO DENTRO DO OBJETO PASSAGEM COMO PARÂMETRO DE ENTRADA
+            //De: __________ OK
+            //Para:_________ OK
             // O que for digitado aqui irá para formação passagem para ser impressa no final
+
+            Console.WriteLine();
+
+            Console.WriteLine("Valor da passagem: R$ 60,00"); // ou colocar em uma variável ou tal valor já estar dentro de uma variável. Pode ser mais complexo caso seja variado conforme origem/destino
+
+            // Deseja continuar com a compra? Digite uma para continuar. 2 para cancelar passagem
+
+            Console.WriteLine("PoltronaS disponíveis: P1 a P30"); // Não imprimir toda a lista, pois é muito grande
+            foreach (var OpcaoPoltrona in DB_ContextPoltronas.ListaPoltronas)
+            {
+                Console.WriteLine(OpcaoPoltrona.Poltrona);
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Poltronas de 1 a 5 com desconto de 15%");
+            Console.WriteLine("Passagem Digital com desconto de 5%");
+
+            Console.WriteLine();
+
+            Console.Write("Que Poltrona você deseja? ");
+            string poltronaSelecionada = Console.ReadLine(); // é preciso fazer validações. Várias. Na medida da escolha, realizar os cálculos
+            PoltronasViewModel poltrona = new PoltronasViewModel(poltronaSelecionada); // colocar nos parâmetros para gravar na passagem
+
+            Console.WriteLine();
+
+            
+
+            Console.WriteLine();
+
+            Console.WriteLine("Deseja Passagem com Seguro? *acréscimo de 3% ");
+            // valor atual da passagem pode até ser impresso logo depois com cálculo já feito, mas seria uma perfumaria
+            Console.WriteLine();
+
+
+
 
             //Lista de opções de poltronas
             // Lista de passagens de 1 a 30
