@@ -4,11 +4,28 @@ using System.Text;
 
 namespace Desafio_Aula10
 {
-    public class TiposPassageiro
+    public abstract class TiposPassageiro // ajustar
     {
-        public string Normal { get; set; }
-        public string Estudante { get; set; }
-        public string Aposentado { get; set; }
-        public string Deficiente { get; set; }
+        public abstract int Id_TipoPassageiro { get; }
+        public abstract string TipoPassageiro { get; }
+        public decimal ValorTotalCompra { get; set; }
+        public EnumTipoPassageiro enumTipoPassageiro { get; set; }
+
+        //public bool ValidaValorPagamento(string ValorPagamento) // ver se vou usar
+        //{
+        //    bool valorValido = decimal.TryParse(ValorPagamento, out decimal valorConvertido) && valorConvertido > 0;
+        //    if (valorValido)
+        //    {
+        //        this.ValorTotalCompra = valorConvertido;
+        //        return valorValido;
+        //    }
+        //    else
+        //    {
+        //        throw new Exception("Valor inválido, verifique!");
+        //    }
+        //}
+        public abstract void ValidaTipoPassageiro(); ///
+
+        public abstract double CalcularTotalPagamento(double valor);
     }
 }
