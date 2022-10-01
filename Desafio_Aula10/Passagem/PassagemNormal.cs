@@ -24,14 +24,18 @@ namespace Desafio_Aula10
         public override double CalcularTotalPagamento(double valor) // pensar caso tiver seguro
         {
             if (seguro.Id_Seguro == 1){
-                return valor + (valor * seguro.ValorSeguro);
+                ValorTotalCompra = valor + (valor * seguro.ValorSeguro);
+                return ValorTotalCompra;
             }
             if(seguro.Id_Seguro == 2)
             {
-                return valor;
+                ValorTotalCompra = valor;
+                return ValorTotalCompra;
             }
-            return valor; 
+            ValorTotalCompra = valor;
+            return ValorTotalCompra; 
             // arrumar essa função
+            // precisa ser pensado aqui caso seja poltrona entre 1 e 5
 
         }
     }

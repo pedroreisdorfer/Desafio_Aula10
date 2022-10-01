@@ -8,7 +8,7 @@ namespace Desafio_Aula10
     {
         public abstract int Id_TipoPassageiro { get; }
         public abstract string TipoPassageiro { get; }
-        public decimal ValorTotalCompra { get; set; }
+        public double ValorTotalCompra { get; set; }
         public EnumTipoPassageiro enumTipoPassageiro { get; set; }
 
         //public bool ValidaValorPagamento(string ValorPagamento) // ver se vou usar

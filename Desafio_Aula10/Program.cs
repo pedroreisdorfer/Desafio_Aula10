@@ -22,11 +22,7 @@ namespace Desafio_Aula10
             // Deseja continuar com a compra? Digite uma para continuar. 2 para cancelar passagem
 
             Console.WriteLine("PoltronaS disponíveis: P1 a P30"); // Não imprimir toda a lista, pois é muito grande
-            foreach (var OpcaoPoltrona in DB_ContextPoltronas.ListaPoltronas)
-            {
-                Console.WriteLine(OpcaoPoltrona.Poltrona);
-            }
-
+          
             Console.WriteLine();
 
             Console.WriteLine("Poltronas de 1 a 5 com desconto de 15%");
@@ -36,7 +32,20 @@ namespace Desafio_Aula10
 
             Console.Write("Que Poltrona você deseja? ");
             string poltronaSelecionada = Console.ReadLine(); // é preciso fazer validações. Várias. Na medida da escolha, realizar os cálculos
-            PoltronasViewModel poltrona = new PoltronasViewModel(poltronaSelecionada); // colocar nos parâmetros para gravar na passagem
+
+            System.Collections.IList list = DB_ContextPoltronas.ListaPoltronas;
+            for (int i = 0; i < list.Count; i++)
+            {
+                string OpcaoPoltrona = (string)list[i];
+                if (OpcaoPoltrona == poltronaSelecionada)
+                {
+                    PoltronasViewModel poltrona = new PoltronasViewModel(poltronaSelecionada);
+                }
+                    
+            } // ver se roda essa função
+
+
+             // colocar nos parâmetros para gravar na passagem
 
             Console.WriteLine();
 
