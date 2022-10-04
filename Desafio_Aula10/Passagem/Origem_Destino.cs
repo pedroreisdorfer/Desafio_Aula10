@@ -11,8 +11,8 @@ namespace Desafio_Aula10
 
         public Origem_Destino(string origem, string destino)
         {
-            Origem = origem;
-            Destino = destino;
+            this.Origem = origem;
+            this.Destino = destino;
         }
     }
 }

@@ -13,5 +13,10 @@ namespace Desafio_Aula10
             Poltrona = poltrona;
         }
         // poltrona deve receber a poltrona selecionada
+
+        public void ValidaPoltronaPromocional()
+        {
+
+        }
     }
 }

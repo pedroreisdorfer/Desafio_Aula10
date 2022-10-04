@@ -23,6 +23,7 @@ namespace Desafio_Aula10
 
         public override double CalcularTotalPagamento(double valor) // pensar caso tiver seguro
         {
+
             if (seguro.Id_Seguro == 1){
                 ValorTotalCompra = valor + (valor * seguro.ValorSeguro);
                 return ValorTotalCompra;

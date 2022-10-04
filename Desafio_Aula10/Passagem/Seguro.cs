@@ -9,6 +9,7 @@ namespace Desafio_Aula10
         public int Id_Seguro { get; set; }
 
         public double ValorSeguro { get; }
+        // CREIO QUE terá que ser feito com o seguro com é feito com tipo passagem
 
         public Seguro()
         {
@@ -16,7 +17,7 @@ namespace Desafio_Aula10
             {
                 this.ValorSeguro = 0.03;
             }
-            if(Id_Seguro == 1)
+            if(Id_Seguro == 2)
             {
                 this.ValorSeguro = 0;
             }
