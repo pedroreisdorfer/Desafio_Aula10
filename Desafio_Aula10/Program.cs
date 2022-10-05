@@ -9,7 +9,9 @@ namespace Desafio_Aula10
         {
             List<TiposPassageiro> listaOpcoesDePassagem = new List<TiposPassageiro> { new PassagemNormal(), new PassagemEstudante(), new PassagemAposentado(), new PassagemDeficiente()};
 
+            TiposPassageiro tipoPassageiroSelecionado = EscolherMeioDePagamento(listaOpcoesDePassagem);
 
+            InformaValorPassagem(tipoPassageiroSelecionado);
 
 
             Console.Write("Escolha sua Origem: ");
@@ -66,8 +68,13 @@ namespace Desafio_Aula10
             Console.WriteLine("Digite 1 caso queira Seguro Passagem: *acréscimo de 3% ");
             Console.WriteLine("Digite 2 caso não queira Seguro Passagem");
             int Id_Seguro = int.Parse(Console.ReadLine());
-            Seguro seguro = new Seguro();
-            seguro.Id_Seguro = Id_Seguro;
+
+            Seguro seguro_ = new Seguro();
+            seguro_.criar(Id_Seguro);
+
+            
+
+
             // valor atual da passagem pode até ser impresso logo depois com cálculo já feito, mas seria uma perfumaria
             // resposta do seguro deve bater com o Id_Seguro. Resposta um ou dois
             // A escolha do seguro ou não deve cair lá na impressão da Passagem
@@ -86,9 +93,7 @@ namespace Desafio_Aula10
 
            
 
-            TiposPassageiro tipoPassageiroSelecionado = EscolherMeioDePagamento(listaOpcoesDePassagem);
-
-            InformaValorPassagem(tipoPassageiroSelecionado);
+            
 
             
 
