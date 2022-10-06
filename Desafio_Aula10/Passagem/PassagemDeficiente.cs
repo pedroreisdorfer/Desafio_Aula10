@@ -20,12 +20,12 @@ namespace Desafio_Aula10
 
         public override void ValidaTipoPassageiro()
         {
-            Console.WriteLine("Passagem para passageiro deficiente");
+            Console.WriteLine("Passagem para passageiro Deficiente");
         }
 
         public override double CalcularTotalPagamento(double valor) // pensar caso tiver seguro
         {
-            valor = 0.00;
+            valor = 0;
             
 
             if (seguro.Id_Seguro == 1)

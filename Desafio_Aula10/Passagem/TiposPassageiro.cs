@@ -13,7 +13,7 @@ namespace Desafio_Aula10
 
         //public bool ValidaValorPagamento(string ValorPagamento) // ver se vou usar
         //{
-        //    bool valorValido = decimal.TryParse(ValorPagamento, out decimal valorConvertido) && valorConvertido > 0;
+        //    bool valorValido = double.TryParse(ValorPagamento, out double valorConvertido) && valorConvertido >= 0;
         //    if (valorValido)
         //    {
         //        this.ValorTotalCompra = valorConvertido;

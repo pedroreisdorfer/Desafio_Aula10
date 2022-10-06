@@ -7,12 +7,11 @@ namespace Desafio_Aula10
     {
         static void Main(string[] args)
         {
+            
             List<TiposPassageiro> listaOpcoesDePassagem = new List<TiposPassageiro> { new PassagemNormal(), new PassagemEstudante(), new PassagemAposentado(), new PassagemDeficiente()};
 
-            TiposPassageiro tipoPassageiroSelecionado = EscolherMeioDePagamento(listaOpcoesDePassagem);
 
-            InformaValorPassagem(tipoPassageiroSelecionado);
-
+            IServidorPassagem servidorPassagem = new IServidorPassagem();
 
             Console.Write("Escolha sua Origem: ");
             string origem = Console.ReadLine(); // validação contra número. Em um programa mais completo, colocar lista de opção de origem
@@ -22,22 +21,19 @@ namespace Desafio_Aula10
 
             origem_Destino.Origem = origem;
             origem_Destino.Destino = destino;
-            //De: __________ OK
-            //Para:_________ OK
-            // O que for digitado aqui irá para formação passagem para ser impressa no final
 
             Console.WriteLine();
 
-            Console.WriteLine("Valor da passagem: R$ 60,00"); // ou colocar em uma variável ou tal valor já estar dentro de uma variável. Pode ser mais complexo caso seja variado conforme origem/destino
+            Console.WriteLine("Valor da passagem: R$ 60,00"); // Pode ser mais complexo caso seja variado conforme origem/destino
           
             // Deseja continuar com a compra? Digite uma para continuar. 2 para cancelar passagem
 
-            Console.WriteLine("PoltronaS disponíveis: P1 a P30"); // Não imprimir toda a lista, pois é muito grande
+            Console.WriteLine("PoltronaS disponíveis: P1 a P30"); 
           
             Console.WriteLine();
 
             Console.WriteLine("Poltronas de 1 a 5 com desconto de 15%");
-            Console.WriteLine("Passagem Digital com desconto de 5%"); /////////////////////
+            Console.WriteLine("Passagem Digital com desconto de 5%"); 
 
             Console.WriteLine();
 
@@ -58,53 +54,35 @@ namespace Desafio_Aula10
 
             PoltronasViewModel poltrona = new PoltronasViewModel(poltronaSelecionada);
             poltrona.Poltrona = poltronaSelecionada;
-            
-
-
-            // colocar nos parâmetros para gravar na passagem
 
             Console.WriteLine();
 
             Console.WriteLine("Digite 1 caso queira Seguro Passagem: *acréscimo de 3% ");
             Console.WriteLine("Digite 2 caso não queira Seguro Passagem");
             int Id_Seguro = int.Parse(Console.ReadLine());
-
-            Seguro seguro_ = new Seguro();
-            seguro_.criar(Id_Seguro);
-
             
+            Seguro seguro_ = new Seguro();
+            seguro_.Id_Seguro = Id_Seguro;
 
+            //if (Id_Seguro == 1)
+            //{
+            //    seguro_.ValorSeguro = 0.03;
+            //}
+            //if (Id_Seguro == 2)
+            //{
+            //    seguro_.ValorSeguro = 0.00;
+            //}
 
-            // valor atual da passagem pode até ser impresso logo depois com cálculo já feito, mas seria uma perfumaria
-            // resposta do seguro deve bater com o Id_Seguro. Resposta um ou dois
             // A escolha do seguro ou não deve cair lá na impressão da Passagem
             Console.WriteLine();
 
-            //Console.WriteLine("Digite 1 para Passagem Normal");
-            //Console.WriteLine("Digite 2 para Passagem Estudante");
-            //Console.WriteLine("Digite 3 para Passagem Aposentado");
-            //Console.WriteLine("Digite 4 para Passagem Deficiente");
+            TiposPassageiro tipoPassageiroSelecionado = EscolherMeioDePagamento(listaOpcoesDePassagem);
+            double valorPassagem = 60.00;
+            tipoPassageiroSelecionado.CalcularTotalPagamento(valorPassagem);
 
-            //string id_tipoPassageiro = Console.ReadLine();
-            ////TiposPassageiro tipoPassageiro = null;
-            //TiposPassageiro tipoPassageiro = TipoPassageiroFactory.ValidadorTipoPassageiro(id_tipoPassageiro);
+            //InformaValorPassagem(tipoPassageiroSelecionado);
 
-            //double valorTotal = tipoPassageiro.CalcularTotalPagamento(valorPassagem);
-
-           
-
-            
-
-            
-
-            //Passagem bilhetePassagem = new Passagem();
-            //bilhetePassagem.ImpressaoPassagem();
-
-            //Lista de opções de poltronas
-            // Lista de passagens de 1 a 30 ok
-
-            // Console: Poltronas de 1 a 5 com desconto de 15% ok
-            // Console: Passagem Digital com desconto de 5% ok
+            servidorPassagem.Salvar(tipoPassageiroSelecionado);
 
             //Console: "Escolha sua Poltrona"
             // Validação de poltrona existente
@@ -156,24 +134,23 @@ namespace Desafio_Aula10
         }
 
 
-        private static void InformaValorPassagem(TiposPassageiro tipoPassageiroSelecionado)
-        {
-            bool ValorValido = false;
-            do
-            {
-                try
-                {
-                    double valorPassagem = 60.00;
-                    double valorTotalCompra = tipoPassageiroSelecionado.CalcularTotalPagamento(valorPassagem); // strategy
-                    //ValorValido = meioPagamentoSelecionado.ValidaValorPagamento(valorTotalCompra.ToString());
-                    Console.WriteLine(valorTotalCompra);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-            } while (ValorValido == false);
-        }
+        //private static void InformaValorPassagem(TiposPassageiro tipoPassageiroSelecionado)
+        //{
+        //    bool ValorValido = false;
+        //    do
+        //    {
+        //        try
+        //        {
+        //            double valorPassagem = 60.00;
+        //            double valorTotalCompra = tipoPassageiroSelecionado.CalcularTotalPagamento(valorPassagem); // strategy
+        //            //ValorValido = tipoPassageiroSelecionado.ValidaValorPagamento(valorTotalCompra.ToString());
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            Console.WriteLine(e.Message);
+        //        }
+        //    } while (ValorValido == false);
+        //}
 
     }
 }

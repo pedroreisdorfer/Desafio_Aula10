@@ -26,15 +26,15 @@ namespace Desafio_Aula10
         public override double CalcularTotalPagamento(double valor) // pensar caso tiver seguro
         {
             double valorAssento = valor;
-            // tem que chegar aqui a escolha da poltrona
-            if (PoltronaSelecionada_.Poltrona == "P1" ||
-                PoltronaSelecionada_.Poltrona == "P2" ||
-                PoltronaSelecionada_.Poltrona == "P3" ||
-                PoltronaSelecionada_.Poltrona == "P4" ||
-                PoltronaSelecionada_.Poltrona == "P5")
-            {
-                valorAssento = valor - (valor * 0.15);
-            }
+            //// tem que chegar aqui a escolha da poltrona
+            //if (PoltronaSelecionada_.Poltrona == "P1" ||
+            //    PoltronaSelecionada_.Poltrona == "P2" ||
+            //    PoltronaSelecionada_.Poltrona == "P3" ||
+            //    PoltronaSelecionada_.Poltrona == "P4" ||
+            //    PoltronaSelecionada_.Poltrona == "P5")
+            //{
+            //    valorAssento = valor - (valor * 0,15);
+            //}
 
             if (seguro.Id_Seguro == 1)
             {

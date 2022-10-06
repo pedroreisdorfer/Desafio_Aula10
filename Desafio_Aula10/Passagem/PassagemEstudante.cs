@@ -15,10 +15,10 @@ namespace Desafio_Aula10
 
         public PoltronasViewModel PoltronaSelecionada_;
 
-        //public override string ToString()
-        //{
-        //    return $"Pagamento Valor - {this.ValorTotalCompra:C}";
-        //}
+        public override string ToString()
+        {
+            return $"Pagamento Valor - {this.ValorTotalCompra:C}";
+        }
 
         public override void ValidaTipoPassageiro()
         {

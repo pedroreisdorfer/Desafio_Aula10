@@ -11,10 +11,15 @@ namespace Desafio_Aula10
 
         public Seguro seguro;
 
-        public override string ToString()
+        public PassagemNormal()
         {
-            return $"Pagamento Valor - {this.ValorTotalCompra:C}";
+            seguro = new Seguro();
         }
+
+        //public override string ToString()
+        //{
+        //    return $"Pagamento Valor - {this.ValorTotalCompra:C}";
+        //}
 
         public override void ValidaTipoPassageiro()
         {
@@ -24,17 +29,17 @@ namespace Desafio_Aula10
         public override double CalcularTotalPagamento(double valor) // pensar caso tiver seguro
         {
 
-            if (seguro.Id_Seguro == 1){
-                ValorTotalCompra = valor + (valor * seguro.ValorSeguro);
-                return ValorTotalCompra;
-            }
-            if(seguro.Id_Seguro == 2)
-            {
-                ValorTotalCompra = valor;
-                return ValorTotalCompra;
-            }
-            ValorTotalCompra = valor;
-            return ValorTotalCompra; 
+            //if (seguro.Id_Seguro == 1){
+            //    ValorTotalCompra = valor + (valor * seguro.ValorSeguro);
+            //    return ValorTotalCompra;
+            //}
+            //if(seguro.Id_Seguro == 2)
+            //{
+            //    ValorTotalCompra = valor;
+            //    return ValorTotalCompra;
+            //}
+            
+            return valor + (valor * seguro.ValorSeguro);
             // arrumar essa função
             // precisa ser pensado aqui caso seja poltrona entre 1 e 5
 

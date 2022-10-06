@@ -10,46 +10,46 @@ namespace Desafio_Aula10
 
         public double ValorSeguro { get; set; }
 
-        public double ValorSemSeguro { get => 0.00; }
+        //public decimal ValorSemSeguro { get => 0,00; }
         // CREIO QUE terá que ser feito com o seguro com é feito com tipo passagem
 
         public Seguro()
         {
-            //if(Id_Seguro == 1)
-            //{
-            //    this.ValorSeguro = 0.03;
-            //}
-            //if(Id_Seguro == 2)
-            //{
-            //    this.ValorSeguro = 0;
-            //}
+            if (Id_Seguro == 1)
+            {
+                ValorSeguro = 0.03;
+            }
+            if (Id_Seguro == 2)
+            {
+                ValorSeguro = 0;
+            }
 
             // mas aqui precisa ter validação caso seja digitado outro número
-            
+
         }
 
         // if Id == 0, seguro é zero
         // if Id == 1, seguro é 3%
 
 
-        public static int ComSeguro = 1;
-        public static int SemSeguro = 2;
+        //public static int ComSeguro = 1;
+        //public static int SemSeguro = 2;
 
-        public double criar(int tipo)
-        {
-            if (tipo == ComSeguro)
-            {
-                ValorSeguro = 0.03;
-                return ValorSeguro;
-            }
-            if (tipo == SemSeguro)
-            {
-                ValorSeguro = 0.00;
-                return ValorSeguro;
-            }
+        //public double criar(int tipo)
+        //{
+        //    if (tipo == ComSeguro)
+        //    {
+        //        ValorSeguro = 0.03;
+        //        return ValorSeguro;
+        //    }
+        //    if (tipo == SemSeguro)
+        //    {
+        //        ValorSeguro = 0.00;
+        //        return ValorSeguro;
+        //    }
 
-            throw new Exception("Tipo de janela invalida [" + tipo + "]");
+        //    throw new Exception("Tipo de janela invalida [" + tipo + "]");
 
-        }
+        //}
     }
 }
