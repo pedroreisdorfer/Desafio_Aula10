@@ -28,6 +28,11 @@ namespace Desafio_Aula10
 
         }
 
+        //public void RetornarSeguro()
+        //{
+
+        //}
+
         // if Id == 0, seguro é zero
         // if Id == 1, seguro é 3%
 

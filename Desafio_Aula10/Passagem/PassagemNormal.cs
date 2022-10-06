@@ -9,12 +9,12 @@ namespace Desafio_Aula10
         public override int Id_TipoPassageiro { get => 1; }
         public override string TipoPassageiro { get => "Normal"; }
 
-        public Seguro seguro;
+        //public Seguro seguro;
 
-        public PassagemNormal()
-        {
-            seguro = new Seguro();
-        }
+        //public PassagemNormal()
+        //{
+            
+        //}
 
         //public override string ToString()
         //{
@@ -26,7 +26,7 @@ namespace Desafio_Aula10
             Console.WriteLine("Passagem para passageiro normal");
         }
 
-        public override double CalcularTotalPagamento(double valor) // pensar caso tiver seguro
+        public override double CalcularTotalPagamento(double valor, Seguro seguro) // pensar caso tiver seguro
         {
 
             //if (seguro.Id_Seguro == 1){

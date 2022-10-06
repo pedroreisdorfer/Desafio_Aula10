@@ -78,7 +78,7 @@ namespace Desafio_Aula10
 
             TiposPassageiro tipoPassageiroSelecionado = EscolherMeioDePagamento(listaOpcoesDePassagem);
             double valorPassagem = 60.00;
-            tipoPassageiroSelecionado.CalcularTotalPagamento(valorPassagem);
+            tipoPassageiroSelecionado.CalcularTotalPagamento(valorPassagem, seguro_);
 
             //InformaValorPassagem(tipoPassageiroSelecionado);
 

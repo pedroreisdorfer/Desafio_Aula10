@@ -26,6 +26,6 @@ namespace Desafio_Aula10
         //}
         public abstract void ValidaTipoPassageiro(); ///
 
-        public abstract double CalcularTotalPagamento(double valor);
+        public abstract double CalcularTotalPagamento(double valor, Seguro seguro);
     }
 }

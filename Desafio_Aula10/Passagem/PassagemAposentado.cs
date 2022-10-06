@@ -23,7 +23,7 @@ namespace Desafio_Aula10
             Console.WriteLine("Passagem para passageiro aposentado");
         }
 
-        public override double CalcularTotalPagamento(double valor) // pensar caso tiver seguro
+        public override double CalcularTotalPagamento(double valor, Seguro seguro) // pensar caso tiver seguro
         {
             double valorAssento = valor;
             //// tem que chegar aqui a escolha da poltrona
