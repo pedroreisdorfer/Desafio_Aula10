@@ -13,7 +13,7 @@ namespace Desafio_Aula10
 
         public Seguro seguro { get; set; }
 
-        public PoltronasViewModel PoltronaSelecionada_;
+        public PoltronasViewModel PoltronaSelecionada_ { get; set; } // ser se é preciso
 
         public override string ToString()
         {
@@ -25,24 +25,28 @@ namespace Desafio_Aula10
             Console.WriteLine("Passagem para passageiro estudante");
         }
 
-        public override double CalcularTotalPagamento(double valor, Seguro seguro) // pensar caso tiver seguro
+        public override double CalcularTotalPagamento(double valor, Seguro seguro, PoltronasViewModel poltronasView) // pensar caso tiver seguro
         {
-            double valorAssento = valor;
             // tem que chegar aqui a escolha da poltrona
-            //if(PoltronaSelecionada_.Poltrona == "P1" ||
-            //    PoltronaSelecionada_.Poltrona == "P2" ||
-            //    PoltronaSelecionada_.Poltrona == "P3" ||
-            //    PoltronaSelecionada_.Poltrona == "P4" ||
-            //    PoltronaSelecionada_.Poltrona == "P5")
-            //{
-            //    valorAssento = valor - (valor * 0.15);
-            //}
 
-            
-            
-                ValorTotalCompra = valorAssento + (valorAssento * seguro.ValorSeguro);
+            if (poltronasView.Poltrona == "P1" ||
+                poltronasView.Poltrona == "P2" ||
+                poltronasView.Poltrona == "P3" ||
+                poltronasView.Poltrona == "P4" ||
+                poltronasView.Poltrona == "P5")
+            {
+                ValorTotalCompra = valor - (valor * 0.15);
                 return ValorTotalCompra;
-            
+            }
+            else
+            {
+                ValorTotalCompra = valor + (valor * seguro.ValorSeguro);
+                return ValorTotalCompra;
+            }
+
+
+
+
             // arrumar essa função
             // precisa ser pensado aqui caso seja poltrona entre 1 e 5
             // pensado aqui também que o valor que chega é um valor pré-fixado

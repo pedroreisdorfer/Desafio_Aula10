@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Desafio_Aula10
 {
-    public class Impressa
+    public enum EnumFormaDePassagem
     {
-
+        Digital = 1, 
+        Imprssa = 2
     }
 }

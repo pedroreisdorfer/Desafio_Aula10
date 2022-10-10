@@ -5,6 +5,7 @@ using System.Text;
 namespace Desafio_Aula10
 {
     public class Passagem
+        // ver se vou usar essa classe
     {
         //public string Origem { get; set; }
         //public string Destino { get; set; }

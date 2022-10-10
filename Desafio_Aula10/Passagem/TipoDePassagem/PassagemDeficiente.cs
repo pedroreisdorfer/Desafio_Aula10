@@ -23,24 +23,28 @@ namespace Desafio_Aula10
             Console.WriteLine("Passagem para passageiro Deficiente");
         }
 
-        public override double CalcularTotalPagamento(double valor, Seguro seguro) // pensar caso tiver seguro
+        public override double CalcularTotalPagamento(double valor, Seguro seguro, PoltronasViewModel poltronasView) // pensar caso tiver seguro
         {
-            valor = 0;
-            
+            // tem que chegar aqui a escolha da poltrona
 
-            if (seguro.Id_Seguro == 1)
+            if (poltronasView.Poltrona == "P1" ||
+                poltronasView.Poltrona == "P2" ||
+                poltronasView.Poltrona == "P3" ||
+                poltronasView.Poltrona == "P4" ||
+                poltronasView.Poltrona == "P5")
+            {
+                ValorTotalCompra = valor - (valor * 0.15);
+                return ValorTotalCompra;
+            }
+            else
             {
                 ValorTotalCompra = valor + (valor * seguro.ValorSeguro);
                 return ValorTotalCompra;
             }
 
-            if (seguro.Id_Seguro == 2)
-            {
-                ValorTotalCompra = valor;
-                return ValorTotalCompra;
-            }
-            ValorTotalCompra = valor;
-            return ValorTotalCompra;
+
+
+
             // arrumar essa função
             // precisa ser pensado aqui caso seja poltrona entre 1 e 5
             // pensado aqui também que o valor que chega é um valor pré-fixado

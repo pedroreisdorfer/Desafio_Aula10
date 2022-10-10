@@ -13,13 +13,14 @@ namespace Desafio_Aula10
         //public decimal ValorSemSeguro { get => 0,00; }
         // CREIO QUE terá que ser feito com o seguro com é feito com tipo passagem
 
-        public Seguro()
+        public Seguro(int tipo)
         {
-            if (Id_Seguro == 1)
+
+            if (tipo == 1)
             {
                 ValorSeguro = 0.03;
             }
-            if (Id_Seguro == 2)
+            if (tipo == 2)
             {
                 ValorSeguro = 0;
             }
